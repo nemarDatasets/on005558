@@ -1,36 +1,87 @@
 {
   "version": "2.0",
-  "dataset_id": "on005558",
-  "source": "openneuro",
-  "source_id": "ds005558",
+  "pipeline_stage": "validated",
   "title": "Categorized Free Recall with Closed-Loop Stimulation at Encoding (Encoding Classifier)",
+  "license": "CC0",
+  "dataset_type": "raw",
   "authors": {
     "Haydn G. Herrema": {},
     "Michael J. Kahana": {}
   },
-  "license": "CC0",
-  "dataset_type": "raw",
   "related_identifiers": [
     {
       "identifier": "10.18112/openneuro.ds005558.v1.0.0",
       "identifier_type": "DOI",
       "relation_type": "IsIdenticalTo"
+    },
+    {
+      "identifier": "https://github.com/nemarDatasets/on005558",
+      "identifier_type": "URL",
+      "relation_type": "IsDescribedBy"
+    },
+    {
+      "identifier": "https://nemar.org/dataset/on005558",
+      "identifier_type": "URL",
+      "relation_type": "IsDescribedBy"
+    },
+    {
+      "identifier": "10.18112/openneuro.ds004809",
+      "identifier_type": "DOI",
+      "relation_type": "IsSupplementedBy"
+    },
+    {
+      "identifier": "10.18112/openneuro.ds005491",
+      "identifier_type": "DOI",
+      "relation_type": "IsSupplementedBy"
     }
-  ],
-  "pipeline_stage": "seeded",
-  "bids_version": "1.7.0",
-  "recording_modality": [
-    "beh",
-    "ieeg"
-  ],
-  "datatypes": [
-    "beh",
-    "ieeg"
   ],
   "funding_references": [
     {
-      "funder_name": "DARPA RAM: N66001-14-2-4032"
+      "funder_name": "DARPA",
+      "award_number": "N66001-14-2-4032",
+      "award_title": "RAM"
     }
   ],
-  "acknowledgements": "We thank our collaborators who have helped in the collection of this data: Hospital of the University of Pennsylvania, Thomas Jefferson University Hospital, Dartmouth-Hitchcock Medical Center, University of Texas Southwestern Medical Center."
+  "resource_type_general": "Dataset",
+  "modalities": [
+    "beh",
+    "ieeg"
+  ],
+  "resource_type_specific": "Neuroimaging Dataset",
+  "sizes": [
+    "0.0 KB (1 files)"
+  ],
+  "formats": [
+    ".edf",
+    ".json",
+    ".md",
+    ".tsv",
+    ".txt"
+  ],
+  "description": "This dataset contains intracranial electrophysiology recordings and behavioral data from a categorized free recall task with real-time closed-loop brain stimulation during encoding. Participants studied semantically organized word lists, performed distractor tasks, and freely recalled items while a machine learning classifier trained on prior sessions predicted subsequent memory and triggered stimulation for low-confidence encoding events. The study investigates the causal role of neural activity patterns in memory formation across multiple clinical sites.",
+  "methods_description": "Intracranial EEG recordings were acquired during a categorized free recall paradigm with 12-item word lists organized into 3 semantic categories (4 words per category). An L2 logistic regression classifier was trained on prior catFR1 sessions using spectral power features (Morlet wavelet transformation, 3-180 Hz, 8 log-spaced frequencies) extracted from the 0-1366 ms post-stimulus interval. Closed-loop stimulation (500 ms duration) was delivered to single electrodes when classifier output fell below participant-specific thresholds determined by Youden's J statistic. Recordings were acquired using Blackrock (250 nV units) or Medtronic (0.1 µV units) systems and referenced monopolarly or bipolarly according to participant-specific electrode montages.",
+  "keywords": [
+    {
+      "term": "intracranial EEG"
+    },
+    {
+      "term": "memory encoding"
+    },
+    {
+      "term": "closed-loop stimulation"
+    },
+    {
+      "term": "machine learning classifier"
+    },
+    {
+      "term": "free recall"
+    },
+    {
+      "term": "semantic categorization"
+    },
+    {
+      "term": "neural decoding"
+    }
+  ],
+  "source_hash": "8c46510ec01772b2805a7a599acf1b93d3e1a4cf1b0ab483f4b52eadab9ee7ae"
 }
