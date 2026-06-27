@@ -2,18 +2,38 @@
   "version": "2.0",
   "pipeline_stage": "validated",
   "title": "Categorized Free Recall with Closed-Loop Stimulation at Encoding (Encoding Classifier)",
+  "description": "This dataset contains intracranial electrophysiology recordings and behavioral data from a categorized free recall task with real-time closed-loop brain stimulation during encoding. Participants studied semantically organized word lists, performed distractor tasks, and freely recalled items while a machine learning classifier trained on prior sessions predicted subsequent memory performance and triggered stimulation for low-confidence encoding events. The study demonstrates the application of predictive neural decoding to modulate memory encoding through targeted electrical stimulation.",
+  "methods_description": "Intracranial recordings were collected during a categorized free recall paradigm with 12-item word lists organized into 3 semantic categories (4 words per category). An L2 logistic regression classifier was trained on prior catFR1 sessions using spectral power features (Morlet wavelet transformation, 3-180 Hz, 8 log-spaced frequencies) extracted from the 0-1366 ms post-stimulus interval and z-transformed within-session. Classifier threshold was determined using Youden's J statistic from training ROC curves. During closed-loop sessions, stimulation (500 ms duration) was delivered to a single electrode when classifier output fell below the threshold during the decoding interval on stimulation lists. Recordings were acquired at multiple clinical sites using Blackrock (250 nV units) or Medtronic (0.1 µV units) systems.",
   "license": "CC0",
   "dataset_type": "raw",
   "authors": {
     "Haydn G. Herrema": {},
     "Michael J. Kahana": {}
   },
-  "related_identifiers": [
+  "keywords": [
     {
-      "identifier": "10.18112/openneuro.ds005558.v1.0.0",
-      "identifier_type": "DOI",
-      "relation_type": "IsIdenticalTo"
+      "term": "intracranial EEG"
     },
+    {
+      "term": "closed-loop stimulation"
+    },
+    {
+      "term": "memory encoding"
+    },
+    {
+      "term": "machine learning classification"
+    },
+    {
+      "term": "free recall"
+    },
+    {
+      "term": "neural decoding"
+    },
+    {
+      "term": "semantic memory"
+    }
+  ],
+  "related_identifiers": [
     {
       "identifier": "https://github.com/nemarDatasets/on005558",
       "identifier_type": "URL",
@@ -33,6 +53,11 @@
       "identifier": "10.18112/openneuro.ds005491",
       "identifier_type": "DOI",
       "relation_type": "IsSupplementedBy"
+    },
+    {
+      "identifier": "10.18112/openneuro.ds005558.v1.0.0",
+      "identifier_type": "DOI",
+      "relation_type": "IsDerivedFrom"
     }
   ],
   "funding_references": [
@@ -43,45 +68,21 @@
     }
   ],
   "resource_type_general": "Dataset",
+  "resource_type_specific": "Neuroimaging Dataset",
   "modalities": [
     "beh",
     "ieeg"
   ],
-  "resource_type_specific": "Neuroimaging Dataset",
   "sizes": [
-    "0.0 KB (1 files)"
+    "13.1 GB (24 files)"
   ],
   "formats": [
     ".edf",
     ".json",
     ".md",
     ".tsv",
-    ".txt"
+    ".txt",
+    ".yml"
   ],
-  "description": "This dataset contains intracranial electrophysiology recordings and behavioral data from a categorized free recall task with real-time closed-loop brain stimulation during encoding. Participants studied semantically organized word lists, performed distractor tasks, and freely recalled items while a machine learning classifier trained on prior sessions predicted subsequent memory and triggered stimulation for low-confidence encoding events. The study investigates the causal role of neural activity patterns in memory formation across multiple clinical sites.",
-  "methods_description": "Intracranial EEG recordings were acquired during a categorized free recall paradigm with 12-item word lists organized into 3 semantic categories (4 words per category). An L2 logistic regression classifier was trained on prior catFR1 sessions using spectral power features (Morlet wavelet transformation, 3-180 Hz, 8 log-spaced frequencies) extracted from the 0-1366 ms post-stimulus interval. Closed-loop stimulation (500 ms duration) was delivered to single electrodes when classifier output fell below participant-specific thresholds determined by Youden's J statistic. Recordings were acquired using Blackrock (250 nV units) or Medtronic (0.1 µV units) systems and referenced monopolarly or bipolarly according to participant-specific electrode montages.",
-  "keywords": [
-    {
-      "term": "intracranial EEG"
-    },
-    {
-      "term": "memory encoding"
-    },
-    {
-      "term": "closed-loop stimulation"
-    },
-    {
-      "term": "machine learning classifier"
-    },
-    {
-      "term": "free recall"
-    },
-    {
-      "term": "semantic categorization"
-    },
-    {
-      "term": "neural decoding"
-    }
-  ],
-  "source_hash": "8c46510ec01772b2805a7a599acf1b93d3e1a4cf1b0ab483f4b52eadab9ee7ae"
+  "source_hash": "3a53e8af87266fed33c0ffeaa369d547d5222d6d045196f5394cc9da3c883c5b"
 }
