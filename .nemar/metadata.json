@@ -1,9 +1,9 @@
 {
   "version": "2.0",
-  "pipeline_stage": "validated",
+  "pipeline_stage": "enriched",
   "title": "Categorized Free Recall with Closed-Loop Stimulation at Encoding (Encoding Classifier)",
-  "description": "This dataset contains intracranial electrophysiology recordings and behavioral data from a categorized free recall task with real-time closed-loop brain stimulation during encoding. Participants studied semantically organized word lists, performed distractor tasks, and freely recalled items while a machine learning classifier trained on prior sessions predicted subsequent memory performance and triggered stimulation for low-confidence encoding events. The study demonstrates the application of predictive neural decoding to modulate memory encoding through targeted electrical stimulation.",
-  "methods_description": "Intracranial recordings were collected during a categorized free recall paradigm with 12-item word lists organized into 3 semantic categories (4 words per category). An L2 logistic regression classifier was trained on prior catFR1 sessions using spectral power features (Morlet wavelet transformation, 3-180 Hz, 8 log-spaced frequencies) extracted from the 0-1366 ms post-stimulus interval and z-transformed within-session. Classifier threshold was determined using Youden's J statistic from training ROC curves. During closed-loop sessions, stimulation (500 ms duration) was delivered to a single electrode when classifier output fell below the threshold during the decoding interval on stimulation lists. Recordings were acquired at multiple clinical sites using Blackrock (250 nV units) or Medtronic (0.1 µV units) systems.",
+  "description": "This dataset comprises intracranial EEG recordings and behavioral events from a categorized free recall task with closed-loop electrical stimulation applied during encoding. Participants studied word lists organized by semantic category, performed arithmetic distractor tasks, and freely recalled words, while a classifier trained on prior encoding data determined stimulation delivery based on predicted memory encoding success. Data were collected across multiple clinical sites in collaboration with the Computational Memory Lab at the University of Pennsylvania, as part of the DARPA Restoring Active Memory (RAM) project.",
+  "methods_description": "Intracranial EEG was recorded during a categorized free recall task involving word list encoding, arithmetic distraction, and free recall. Closed-loop stimulation was delivered to a single electrode during encoding when an L2 logistic regression classifier, trained on spectral power features (Morlet wavelet transform, 3-180 Hz, 60 Hz line noise removed via Butterworth filter) from prior catFR1 sessions, predicted low likelihood of subsequent recall. Classifier performance was validated via leave-one-session-out cross-validation with permutation testing, and stimulation thresholds were set using Youden's J statistic. Recordings were labeled as monopolar or bipolar, with electrode locations provided in MNI and Talairach coordinates.",
   "license": "CC0",
   "dataset_type": "raw",
   "authors": {
@@ -12,7 +12,15 @@
   },
   "keywords": [
     {
+      "term": "Electroencephalography",
+      "subject_scheme": "MeSH",
+      "value_uri": "http://id.nlm.nih.gov/mesh/D004569"
+    },
+    {
       "term": "intracranial EEG"
+    },
+    {
+      "term": "free recall"
     },
     {
       "term": "closed-loop stimulation"
@@ -21,16 +29,12 @@
       "term": "memory encoding"
     },
     {
-      "term": "machine learning classification"
+      "term": "Deep Brain Stimulation",
+      "subject_scheme": "MeSH",
+      "value_uri": "http://id.nlm.nih.gov/mesh/D046690"
     },
     {
-      "term": "free recall"
-    },
-    {
-      "term": "neural decoding"
-    },
-    {
-      "term": "semantic memory"
+      "term": "semantic categorization"
     }
   ],
   "related_identifiers": [
@@ -64,7 +68,7 @@
     {
       "funder_name": "DARPA",
       "award_number": "N66001-14-2-4032",
-      "award_title": "RAM"
+      "award_title": "Restoring Active Memory (RAM)"
     }
   ],
   "resource_type_general": "Dataset",
