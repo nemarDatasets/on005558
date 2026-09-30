@@ -1,9 +1,9 @@
 {
   "version": "2.0",
-  "pipeline_stage": "enriched",
+  "pipeline_stage": "validated",
   "title": "Categorized Free Recall with Closed-Loop Stimulation at Encoding (Encoding Classifier)",
-  "description": "This dataset comprises intracranial EEG recordings and behavioral events from a categorized free recall task with closed-loop electrical stimulation applied during encoding. Participants studied word lists organized by semantic category, performed arithmetic distractor tasks, and freely recalled words, while a classifier trained on prior encoding data determined stimulation delivery based on predicted memory encoding success. Data were collected across multiple clinical sites in collaboration with the Computational Memory Lab at the University of Pennsylvania, as part of the DARPA Restoring Active Memory (RAM) project.",
-  "methods_description": "Intracranial EEG was recorded during a categorized free recall task involving word list encoding, arithmetic distraction, and free recall. Closed-loop stimulation was delivered to a single electrode during encoding when an L2 logistic regression classifier, trained on spectral power features (Morlet wavelet transform, 3-180 Hz, 60 Hz line noise removed via Butterworth filter) from prior catFR1 sessions, predicted low likelihood of subsequent recall. Classifier performance was validated via leave-one-session-out cross-validation with permutation testing, and stimulation thresholds were set using Youden's J statistic. Recordings were labeled as monopolar or bipolar, with electrode locations provided in MNI and Talairach coordinates.",
+  "description": "This dataset contains behavioral events and intracranial electrophysiology (iEEG) recordings from a categorized free recall task with closed-loop electrical stimulation during encoding. Participants studied lists of semantically categorized words, completed arithmetic distractors, and freely recalled the words. Stimulation was triggered by a classifier trained on each participant's prior encoding data to predict subsequent recall. Data were collected at multiple clinical sites in collaboration with the Computational Memory Lab at the University of Pennsylvania.",
+  "methods_description": "Participants with implanted intracranial electrodes performed categorized free recall of 12-word lists drawn from 25 semantic categories. An L2 logistic regression classifier was trained on spectral power features (Morlet wavelets, 3-180 Hz) from 0-1366 ms after word onset in prior catFR1 sessions. It was validated with leave-one-session-out cross-validation and permutation testing. During stimulation lists, 500 ms stimulation was delivered to a single electrode when classifier output fell below a participant-specific Youden's J threshold. Each session comprised 26 lists, and the first 4 lists had no stimulation.",
   "license": "CC0",
   "dataset_type": "raw",
   "authors": {
@@ -12,29 +12,35 @@
   },
   "keywords": [
     {
-      "term": "Electroencephalography",
-      "subject_scheme": "MeSH",
-      "value_uri": "http://id.nlm.nih.gov/mesh/D004569"
-    },
-    {
       "term": "intracranial EEG"
     },
     {
       "term": "free recall"
     },
     {
+      "term": "categorized free recall"
+    },
+    {
       "term": "closed-loop stimulation"
+    },
+    {
+      "term": "Electric Stimulation",
+      "subject_scheme": "MeSH",
+      "value_uri": "http://id.nlm.nih.gov/mesh/D004558"
     },
     {
       "term": "memory encoding"
     },
     {
-      "term": "Deep Brain Stimulation",
-      "subject_scheme": "MeSH",
-      "value_uri": "http://id.nlm.nih.gov/mesh/D046690"
+      "term": "classifier"
     },
     {
-      "term": "semantic categorization"
+      "term": "epilepsy"
+    },
+    {
+      "term": "Memory",
+      "subject_scheme": "MeSH",
+      "value_uri": "http://id.nlm.nih.gov/mesh/D008568"
     }
   ],
   "related_identifiers": [
@@ -68,7 +74,7 @@
     {
       "funder_name": "DARPA",
       "award_number": "N66001-14-2-4032",
-      "award_title": "Restoring Active Memory (RAM)"
+      "award_title": "RAM"
     }
   ],
   "resource_type_general": "Dataset",
@@ -78,7 +84,7 @@
     "ieeg"
   ],
   "sizes": [
-    "13.1 GB (24 files)"
+    "12.19 GB (24 files)"
   ],
   "formats": [
     ".edf",
